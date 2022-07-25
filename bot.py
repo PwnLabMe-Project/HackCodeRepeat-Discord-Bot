@@ -1,10 +1,11 @@
-import discord
 from discord.ext import commands
+import discord
+import config
 import os
 
 intents = discord.Intents(members= True, guilds=True, reactions=True,messages = True,presences=True ) 
 Bot = commands.Bot(command_prefix = "$", intents = intents)
-TOKEN = open("bot_token.txt").read()
+TOKEN = config.TOKEN
 
 @Bot.event
 async def on_ready():
